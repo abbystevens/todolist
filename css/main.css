@@ -1,0 +1,52 @@
+body {
+	color: #040E1C;
+
+}
+
+/* MAIN PAGE LAYOUT ========================================================== */
+
+h1 {
+	
+	padding-bottom: 50px;
+}
+
+h3 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box {
+	max-height: 300px;
+	overflow-y:scroll;
+}
+
+ul {
+	margin-top: 20px;
+}
+
+.save {
+	margin-top: 20px;
+}
+
+.modal-body .input-group {
+	width: 300px;
+}
+
+/* BUTTONS =================================================================== */
+.active {
+	color: red;
+}
+
+.done {
+	background-color: #B9CBE3;
+}
+
+.buttons {
+	margin: 20px;
+	background-color: #6B819E;
+	color: white;
+}
+
+.glyphicon-trash {
+	float: right;
+}
