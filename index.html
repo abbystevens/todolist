@@ -12,101 +12,87 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-10">
-					<h1>So much to do! Let's make a list.</h1>
+					<h1>So much to do!  Time to organize.</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
 			<div class="row">	
-				<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2" id="listInput">
-  				<div class="input-group">	
+				<div class="col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-0" id="listInput">
+  				<div class="btn-group-vertical button-bar">
+  					<button type="button" class="btn buttons glyphicon glyphicon-ok" id="done" data-toggle="tooltip" data-placement="right" title="Mark selected as complete"></button>
+						<button type="button" class="btn buttons glyphicon glyphicon-remove" id="removeItem" data-toggle="tooltip" data-placement="right" title="Remove selected"></button>
+						<button type="button" class="btn buttons glyphicon glyphicon-trash" id="clearCompleted" data-toggle="tooltip" data-placement="right" title="Clear completed tasks"></button>	
+						<button type="button" class="btn buttons glyphicon glyphicon-list-alt" id="showAll" data-toggle="tooltip" data-placement="right" title="Restore complete list"></button>
+					</div>
+				</div>
+			
+				<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1">
+					<h3>Make a list.</h3>
+					<div class="input-group">	
     				<input type="text" class="form-control" id="item" placeholder="What do you need to do?">
   					<span class="input-group-btn">
-  						<button class="btn btn-primary" type="button" id="addItem">
+  						<button class="btn buttons" type="button" id="addItem">
   							<span class="glyphicon glyphicon-plus"></span>
   						</button>
   					</span>
   				</div>
 
-  				<div class="btn-group">
-  					
-							<button type="button" class="btn buttons" id="removeItem">Remove</button>
-						
-						
-						<button type="button" class="btn buttons" id="clearCompleted">Clear Completed</button>
-					
-						
-						<button type="button" class="btn buttons" id="done">Done</button>
-						
-					
-						<button type="button" class="btn buttons" id="showAll">Show All</button>
-						
-						
-						<button type="button" class="btn buttons" id="changeItem">Change Item</button>	
-				
-					</div>
-				</div>
-			</div>	
-		</div>
+					<button type="button" class="btn buttons btn-lg" id="saveModal" data-toggle="modal" data-target="#myModal">Save List</button>
+  			</div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-					<h3>Lists make life easier.</h3>
-					<div class="box">
+	  		<div class="col-sm-2 col-sm-offset-1">
+	  			<div class="box">
+						<h3>Saved lists.</h3>
 						<div class="col-sm-10 col-sm-offset-1">
-							<div class="list-group" id="list">
-								<ul>
+							<div class="list-group" id="savedLists">
+								<ul id="list">
 									<!-- List populated by user -->									
 								</ul>
 							</div>	
 						</div>
 					</div>
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Save List</button>
 				</div>
 			</div>
 		</div>
 
-<!--IN CASE MODAL DOESN"T WORK 
-		<div class="container save">
+					
+		<div class="container">
 			<div class="row">
- 				<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-			    <div class="input-group">
-			      <input type="text" class="form-control">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button">Save List</button>
-			      </span>
-			    </div>
-			  </div>
-			</div>	
+				<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+					<div class="box">
+						<div class="list-group">
+							<ul id="listItems">
+								<!-- List populated by user -->									
+							</ul>
+						</div>	
+					</div>
+				</div>
+			</div>
 		</div>
--->
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">What should we call this list?</h4>
-      </div>
-      <div class="modal-body">
-      	
-       	<div class="input-group">
-			    <input type="text" class="form-control" placeholder="List name">    
-			  </div>
-			 	
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-				
-		
-
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">What should we call this list?</h4>
+		      </div>
+		      <div class="modal-body">
+		      	
+		       	<div class="input-group">
+					    <input type="text" class="form-control" placeholder="List name" id="listName">    
+					  </div>
+					 	
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary buttons" id="save">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		
 	</body>
 
